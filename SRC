@@ -1,0 +1,23 @@
+src/
+│
+├── config/               # Arquivos de configuração, por exemplo, para conexão com o banco de dados
+│   ├── db_config.py       # Exemplo de configuração de banco de dados para Python
+│   ├── config.js          # Exemplo de configuração de banco de dados para Node.js
+│
+├── models/               # Modelos de dados que representam tabelas do banco de dados
+│   ├── client.py         # Exemplo de modelo para clientes em Python
+│   ├── order.py          # Exemplo de modelo para pedidos em Python
+│   ├── table.py          # Exemplo de modelo para tabelas em Python
+│
+├── controllers/          # Lógica de controle que lida com solicitações e interage com o banco de dados
+│   ├── clientController.py   # Exemplo de controlador para clientes em Python
+│   ├── orderController.py    # Exemplo de controlador para pedidos em Python
+│   ├── tableController.py    # Exemplo de controlador para tabelas em Python
+│
+├── routes/               # Roteamento de solicitações (se aplicável)
+│   ├── routes.py         # Exemplo de definição de rotas para uma aplicação web
+│
+├── utils/                # Utilitários e funções auxiliares
+│   ├── helpers.py        # Exemplo de funções auxiliares em Python
+│
+└── main.py               # Ponto de entrada principal da aplicação (se aplicável)
