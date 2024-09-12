@@ -1,0 +1,62 @@
+# Gerenciamento-de-Resturante-
+
+CRIAR BANCO DE DADOS RestaurantManagement;
+USE Gestão de Restaurantes;
+CRIAR TABELA Clientes (
+    customer_id INT INCREMENTO AUTOMÁTICO CHAVE PRIMÁRIA,
+    first_name VARCHAR(50) NÃO NULO,
+    sobrenome VARCHAR(50) NÃO NULO,
+    telefone VARCHAR(20),
+    e-mail VARCHAR(100) ÚNICO
+);
+CRIAR TABELA Tabelas (
+    table_id INT INCREMENTO AUTOMÁTICO CHAVE PRIMÁRIA,
+    table_number VARCHAR(10) ÚNICO NÃO NULO,
+    assentos INT NÃO NULO,
+    status ENUM('disponível', 'ocupado', 'reservado') PADRÃO 'disponível'
+);
+CRIAR TABELA Pedidos (
+    order_id INT INCREMENTO AUTOMÁTICO CHAVE PRIMÁRIA,
+    cliente_id INT,
+    tabela_id INT,
+    order_date CARIMBO DE DATA/HORA PADRÃO CARIMBO DE DATA/HORA ATUAL,
+    status ENUM('pendente', 'concluído', 'cancelado') PADRÃO 'pendente',
+    REFERÊNCIAS DE CHAVE ESTRANGEIRA (customer_id) Clientes(customer_id),
+    REFERÊNCIAS DE CHAVE ESTRANGEIRA (table_id) Tabelas(table_id)
+);
+INSERIR EM Clientes (nome, sobrenome, telefone, e-mail)
+VALORES ('Alice', 'Johnson', '555-1234', 'alice.johnson@example.com'),
+       ('Bob', 'Smith', '555-5678', 'bob.smith@example.com');
+INSERIR EM Tabelas (número_da_mesa, assentos, status)
+VALORES ('T1', 4, 'disponível'),
+       ('T2', 2, 'disponível'),
+       ('T3', 6, 'reservado');
+INSERIR EM Pedidos (customer_id, table_id, status)
+VALORES (1, 1, 'pendente'),
+       (2, 2, 'concluído');
+SELECIONE * DE Clientes;
+SELECIONE * DAS Tabelas;
+SELECIONE o.order_id, c.first_name, c.last_name, t.table_number, o.order_date, o.status
+DE Pedidos o
+JUNTE-SE Clientes c ON o.customer_id = c.customer_id
+JUNTE Tabelas t ON o.table_id = t.table_id;
+SELECIONE o.order_id, c.first_name, c.last_name, t.table_number, o.order_date
+DE Pedidos o
+JUNTE-SE Clientes c ON o.customer_id = c.customer_id
+JUNTE Tabelas t ON o.table_id = t.table_id
+ONDE o.status = 'pendente';
+Tabelas de ATUALIZAÇÃO
+Status SET = 'ocupado'
+ONDE table_id = 1;
+ATUALIZAÇÃO Pedidos
+Status SET = 'concluído'
+ONDE order_id = 1;
+ATUALIZAÇÃO Clientes
+SET telefone = '555-9999'
+ONDE e-mail = 'alice.johnson@example.com';
+EXCLUIR DE Pedidos
+ONDE order_id = 2;
+EXCLUIR DE Clientes
+ONDE e-mail = 'bob.smith@example.com';
+EXCLUIR DE Tabelas
+ONDE número_da_tabela = 'T3';
