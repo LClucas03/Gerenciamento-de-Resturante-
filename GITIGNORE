@@ -1,0 +1,30 @@
+# Ignorar arquivos e diretórios de IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignorar arquivos de logs
+*.log
+
+# Ignorar arquivos temporários do sistema
+*.tmp
+*.swp
+*.swo
+
+# Ignorar arquivos de compilação (se aplicável)
+*.class
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar arquivos gerados por ferramentas de build (exemplo Maven, Gradle)
+target/
+build/
+
+# Ignorar arquivos de banco de dados temporários
+*.sql
+
+# Ignorar arquivos sensíveis
+config/
+*.env
