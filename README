@@ -1,0 +1,44 @@
+# Sistema de Gerenciamento de Restaurantes
+
+## Descrição
+
+Este projeto é um sistema para gerenciar as operações de um restaurante, incluindo clientes, mesas e pedidos. O sistema utiliza um banco de dados SQL para armazenar e manipular informações sobre clientes, mesas e pedidos.
+
+## Estrutura do Banco de Dados
+
+- **Clientes**: Armazena informações sobre os clientes do restaurante, como nome, sobrenome, telefone e e-mail.
+- **Tabelas**: Armazena informações sobre as mesas do restaurante, incluindo número da mesa, número de assentos e status (disponível, ocupado ou reservado).
+- **Pedidos**: Armazena informações sobre os pedidos feitos pelos clientes, incluindo a mesa reservada, a data do pedido e o status do pedido.
+
+## Scripts
+
+1. **Criação do Banco de Dados e Tabelas**:
+   - `create_database.sql`: Script para criar o banco de dados e as tabelas necessárias.
+
+2. **Inserção de Dados**:
+   - `insert_data.sql`: Script para inserir dados iniciais nas tabelas.
+
+3. **Consultas e Relatórios**:
+   - `queries.sql`: Script para realizar consultas e gerar relatórios.
+
+4. **Atualizações e Exclusões**:
+   - `update_delete.sql`: Script para atualizar e excluir dados existentes.
+
+## Uso
+
+1. Execute o script `create_database.sql` para criar o banco de dados e as tabelas.
+2. Execute o script `insert_data.sql` para inserir dados iniciais nas tabelas.
+3. Execute o script `queries.sql` para realizar consultas e gerar relatórios.
+4. Execute o script `update_delete.sql` para atualizar e excluir dados conforme necessário.
+
+## Requisitos
+
+- MySQL ou outro sistema de gerenciamento de banco de dados SQL compatível.
+
+## Contribuição
+
+Sinta-se à vontade para contribuir com melhorias e correções. Crie uma issue ou um pull request para sugestões e mudanças.
+
+## Licença
+
+Este projeto é de código aberto e licenciado sob a [MIT License](LICENSE).
